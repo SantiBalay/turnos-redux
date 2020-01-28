@@ -3,12 +3,11 @@ import Header from './Header'
 import Formulario from './Formulario'
 import ListaTurnos from './ListaTurnos'
 
+//redux 
+import { Provider } from 'react-redux'
+import store from '../store'
+
 class App extends Component {
-  
-  
-  state = {  
-    turnos : []
-  }
 
   componentDidUpdate() {
     localStorage.setItem(
@@ -30,16 +29,6 @@ class App extends Component {
 
   }
 
-
-  crearTurno = (nuevoTurno) => {
-    const turnos = [...this.state.turnos, nuevoTurno]
-
-    this.setState ({
-      turnos
-    })
-
-  }
-
   eliminar = (idTurno) => {
        const turnosActuales =[...this.state.turnos] 
 
@@ -52,29 +41,25 @@ class App extends Component {
 
   render() { 
     return (   
-      <div className="container">
-        <Header
-          titulo={"Administrador de turnos"}
-        />
-        
-        <div className="row">
-            <div className="col-md-6">
-               <Formulario
-                  crearTurno={this.crearTurno}
-               />
-            </div>
-
-            <div className="col-md-6">
-                <ListaTurnos
-                  turnos= {this.state.turnos}
-                  eliminar = {this.eliminar}
+      <Provider store={store}>
+        <div className="container">
+          <Header
+            titulo={"Administrador de turnos"}
+          />
+          
+          <div className="row">
+              <div className="col-md-6">
+                <Formulario
                 />
-            </div>
-        </div>
+              </div>
 
-        
-        
-      </div>
+              <div className="col-md-6">
+                  <ListaTurnos
+                  />
+              </div>
+          </div>
+        </div>
+      </Provider>
     );
   }
 }

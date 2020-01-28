@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
 
+//redux
+import { connect } from 'react-redux'
+import {addTurno} from '../actions/turnosActions'
+
 class Formulario extends Component {
    
    
@@ -46,7 +50,7 @@ class Formulario extends Component {
 
         if(this.validarTurno(nuevoTurno)) {
             //e.currentTarget.reset()
-            this.props.crearTurno(nuevoTurno)
+            this.props.addTurno(nuevoTurno)
 
         }
     }
@@ -114,5 +118,9 @@ class Formulario extends Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    turnos: state.turnos.turnos
+})
  
-export default Formulario;
+export default connect(mapStateToProps,{addTurno}) (Formulario);

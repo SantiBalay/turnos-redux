@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
 import Turno from './Turno'
 
+//redux
+import { connect } from 'react-redux'
+import { getTurnos } from '../actions/turnosActions'
+
+import store from '../store'
+
+store.subscribe( () => {
+    console.log("Me ejecute")
+    localStorage.setItem('turnos', JSON.stringify(store.getState()))
+})
+
 class ListaTurnos extends Component {
-    state = {  }
+
+    componentDidMount() {
+        this.props.getTurnos();
+    }
 
     render() { 
 
@@ -36,5 +50,9 @@ class ListaTurnos extends Component {
         );
     }
 }
+
+const mapStateToProps = state => ( {
+    turnos: state.turnos.turnos
+})
  
-export default ListaTurnos;
+export default connect(mapStateToProps, {getTurnos}) (ListaTurnos);

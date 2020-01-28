@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 
+//redux
+
+import {connect} from 'react-redux'
+import {deleteTurno} from '../actions/turnosActions'
+
 class Turno extends Component {
 
     eliminarTurno = () => {
 
-        this.props.eliminar(this.props.turno.id)
+        this.props.deleteTurno(this.props.turno.id)
     }
 
     render() {
@@ -30,4 +35,4 @@ class Turno extends Component {
     }
 }
  
-export default Turno;
+export default connect(null, {deleteTurno}) (Turno);

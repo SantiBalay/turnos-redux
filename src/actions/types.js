@@ -1,0 +1,8 @@
+export const MOSTRAR_TURNOS = 'MOSTRAR_TURNOS';
+export const AGREGAR_TURNO = 'AGREGAR_TURNOS';
+export const BORRAR_TURNO = ' BORRAR_CITA';
+
+// Validar el formulario
+
+export const VALIDAR_FORMULARIO = 'VALIDAR_FORMULARIO'
+export const MOSTRAR_ERROR = 'VALIDAR_FORMULARIO'
