@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0ced52df22015056fefefb77078dc2e8",
+    "revision": "f33cfb1c932e4e63a44ba7b9c8de945c",
     "url": "/turnos-redux/index.html"
   },
   {
-    "revision": "a80a80c24b2bf46492e1",
+    "revision": "fe0e9d40a79e483ad2f8",
     "url": "/turnos-redux/static/css/main.1fe8cb4d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/turnos-redux/static/js/2.97a52223.chunk.js.LICENSE"
   },
   {
-    "revision": "a80a80c24b2bf46492e1",
-    "url": "/turnos-redux/static/js/main.5eb14cc1.chunk.js"
+    "revision": "fe0e9d40a79e483ad2f8",
+    "url": "/turnos-redux/static/js/main.098f2421.chunk.js"
   },
   {
     "revision": "f3d0b10b91d1057c05c8",
