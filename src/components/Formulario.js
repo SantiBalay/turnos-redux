@@ -38,6 +38,7 @@ class Formulario extends Component {
 
     enviarFormulario = (e) => {
         e.preventDefault()
+        
 
         const nuevoTurno = {
             id: uuid(),
@@ -53,6 +54,7 @@ class Formulario extends Component {
             this.props.addTurno(nuevoTurno)
 
         }
+        e.currentTarget.reset()
     }
 
     render() { 
@@ -93,7 +95,7 @@ class Formulario extends Component {
                         </div>
 
                         <div className="form-group row">
-                            <label className="col-sm-4 col-lg-2 col-form-label">Sintomas</label>
+                            <label className="col-sm-4 col-lg-2 col-form-label">Desc.</label>
                             <div className="col-sm-8 col-lg-10">
                                 <textarea ref={this.sintomasRef} className="form-control"></textarea>
                             </div>
